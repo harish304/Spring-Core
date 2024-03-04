@@ -3,9 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    
+	<bean id="petrolEng" class="in.practice.SpringFristApp.PetrolEngine" />
+
+	<bean id="dieselEng" class="in.practice.SpringFristApp.DisealEngine" />
+
+	<bean id="car" class="in.practice.SpringFristApp.Car">
+	
+		<!-- ********************* Constructor Injection ********************* -->
+		<constructor-arg name="eng" ref="petrolEng" />
+		
+	</bean>
+</beans>
+
+	<!--
+	********************* Setter Injection ************************
+	  
 	<bean id="disealEng" class="in.practice.SpringFristApp.DisealEngine"/>
 	<bean id="car" class="in.practice.SpringFristApp.Car">
 		<property name="eng" ref="disealEng"/>
-	</bean>
-
-</beans>
+	</bean>   -->
